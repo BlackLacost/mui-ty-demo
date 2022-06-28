@@ -7,13 +7,14 @@ import {
   IconButton,
   Stack,
   Toolbar,
+  useMediaQuery,
 } from '@mui/material'
 import React from 'react'
 import { ColorModeContext } from '../context/ThemeContext'
 
 export default function Navbar() {
   const ctx = React.useContext(ColorModeContext)
-  // const matches = useMediaQuery('(max-width:600px)');
+  const matches = useMediaQuery('(max-width: 600px)')
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -25,7 +26,7 @@ export default function Navbar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            {`${matches}` === 'true' && <MenuIcon />}
           </IconButton>
           <Box sx={{ ml: 5 }}>
             <Stack
