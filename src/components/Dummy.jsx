@@ -1,12 +1,18 @@
-import { Button, Stack } from '@mui/material'
+import { Box } from '@mui/material'
 
 const Dummy = () => {
   return (
-    <Stack spacing={2} direction="row">
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-    </Stack>
+    <Box
+      sx={{
+        m: 10,
+        width: 300,
+        height: 300,
+        backgroundColor: '#000',
+        '&:hover': {
+          backgroundColor: '#bbb',
+        },
+      }}
+    />
   )
 }
 
